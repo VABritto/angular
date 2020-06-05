@@ -1,0 +1,9 @@
+.detail-img {
+    width:30%;
+    vertical-align:top;
+}
+
+.detail-text {
+    padding-left:5%;
+    display: inline-block;
+}

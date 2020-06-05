@@ -1,0 +1,25 @@
+<div class="w3-container" style="margin-top:5%">
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngFor="let tempEvent of events" class="col-md-2">
+                <div class="card">
+                    <a routerLink="/events/{{ tempEvent.id }}">
+                        <img class="card-img-top" src="{{ tempEvent.eventImage }}" />
+                    </a>
+                    <div class="card-header">
+                        <a routerLink="/events/{{ tempEvent.id }}">
+                            <h4 class="my-0 font-weight-normal">{{ tempEvent.name }}</h4>
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title pricing-card-title"> {{ tempEvent.ticketPrice | currency: 'BRL'}} <small class="text-muted"> p/ pessoa</small></h5>
+                        <h6 class="card-title">Casa de Show: </h6>
+                        <p class="card-text">{{ tempEvent.concertHall.name }}</p>
+                        <h6>Descrição: </h6>
+                        <p class="card-text">{{ tempEvent.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="w3-container" style="margin-top:5%">
+    <div class="container-fluid">
+        <img src="{{ event.eventImage }}" class="detail-img" />
+        <div class="detail-text">
+            <h3>{{ event.name }}</h3>
+            <h5 style="padding-top:10%">Casa de Show: </h5>
+            <p>{{ event.concertHall?.name }}</p>
+            <h5>Descrição:</h5>
+            <p>{{ event.description }}</p>
+            <h5>Horário:</h5>
+            <p>{{ event.startDate | date:'HH:mm dd/MM/yyyy' }} - {{ event.endDate | date:'HH:mm dd/MM/yyyy' }}</p>
+            <h5>Preço:</h5>
+            <p>{{ event.ticketPrice | currency:'BRL' }}</p>
+            <h5>Ingressos Restantes:</h5>
+            <p>{{ event?.totalTickets }}</p>
+            <div class="form-header">
+                <input #myInput type="number" min="0" max="4" class="au-input au-input-xl"
+                    (keyup.enter)="doBuy(1, myInput.value)">
+                <button (click)="doBuy(1, myInput.value)" class="btn btn-outline-secondary">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
